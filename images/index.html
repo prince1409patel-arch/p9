@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Prachiiiii ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0f0f1a, #050508);
+    color: white;
+    overflow: hidden;
+}
+
+/* PARTICLES */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* FIREWORKS */
+#fireworks {
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* SECTIONS */
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    padding: 20px;
+}
+
+/* TEXT */
+h1 {
+    font-size: 2.8rem;
+    background: linear-gradient(45deg, #ff4d6d, #9d4edd);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+p {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 25px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(45deg, #ff4d6d, #9d4edd);
+    color: white;
+    cursor: pointer;
+}
+
+/* SLIDESHOW */
+.slideshow {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+}
+
+.slide {
+    display: none;
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.active {
+    display: block;
+}
+
+/* NAV BUTTONS */
+.nav {
+    margin-top: 10px;
+}
+
+.nav button {
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background: #ffffff20;
+    color: white;
+    cursor: pointer;
+}
+
+/* HEART */
+.heart {
+    font-size: 5rem;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0%,100% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+}
+
+/* HIDE */
+.hidden {display:none;}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="music"autoplay loop>
+    <source src="Video Project.mp3" type="audio/mpeg">
+</audio>
+
+<canvas id="particles"></canvas>
+<canvas id="fireworks"></canvas> <!-- 🔥 ADDED -->
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+    <button class="btn" onclick="start()">start</button>
+</div>
+
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+    <h1> HAVE A HAPPIEST BIRTHDAY PRACHII </h1>
+    <h2>Hey Beautiful Girl  💫</h2>
+    <p>Look.. I've Made Something Special For You 🎁  ...</p>
+    <button class="btn" onclick="next(3)">Let's Begin</button>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section hidden" id="s3">
+    <h1> SEE WHO OWNS MY HEART &#10084; </h1>
+
+    <div class="slideshow">
+        <img src="IMG_8110.JPG.jpeg" class="slide active">
+        <img src="IMG_8859 (1) (1).jpg" class="slide">
+        <img src="IMG_9599.PNG" class="slide">
+    </div>
+
+    <div class="nav">
+        <button onclick="prevSlide()">⬅</button>
+        <button onclick="nextSlide()">➡</button>
+    </div>
+
+    <button class="btn" onclick="next(4)">Continue</button>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section hidden" id="s4">
+    <h1>You are Special For Me  ✨</h1>
+    <p>  I Just Want Smile On Your Face Every Minute.. Every Day.. Every Time.. 😍 .</p>
+    <button class="btn" onclick="next(5)">Next</button>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section hidden" id="s5">
+    <div class="heart">❤️</div>
+    <h1>Happy Birthday Prachiiii 🎂</h1>
+    <p>I Hope You Got A Very Special And Unique Gift Ever On Your Bithday🥹.</p>
+    <button class="btn" onclick="next(6)">Next</button>
+</div>
+    
+    <!-- SECTION 6 -->
+    <div class="section hidden" id="s6">
+    <h1>Thank You Prachii 💖</h1>
+    <p>Thank You Prachi For Being My Best Friend . </br>
+       Thank You Prachi For Your Every Support .</br>
+       Thank You Prachi For Every Little Care To Me. </br>
+       Thank You Prachi For Become My Travel Partner.</br>
+       Thank You Prachi For Your Kind Gesture Towards Me. </br>
+       Thank You Prachi For Making My Day.</br>
+       Thank You Prachi For Understand Me.</br>
+       Thank You Prachi For Forgive Me In My Every Mistake .</br>
+ 
+                🥰🤝
+       
+    </p>
+ <button class="btn" onclick="next(7)">FINAL</button>
+</div>
+
+      <!-- FINAL -->
+      <div class="section hidden" id="s7">
+      <h1> FINAL MESSAGE FOR YOU  </h1>
+      <p>  Sorry Prachi For Making You Uncomfortable Many Times.</br>
+           Sorry Prachi For Making You Anger .,</br>
+           Sorry Prachi For Hurting You.</br>
+           Sorry Prachi For Making Your Best Day Into Worst Or Bad Day .</br>
+           
+                🥺🥲
+           BUT BUT BUT 
+           
+           ONCE AGAIN MANY MANY HAPPY RETURNS OF THE DAY .</br>
+         FULFILL YOUR DREAMS INTO REALITY AND SHINE EVERYDAY LIKE SUN. </br>
+
+
+
+            "THIS IS SMALL... BUT YOU MEAN EVERYTHING TO ME &#10084; "</BR>
+        
+         
+         
+        THANK YOUUUUUUUUUUUUUUU 🫂♥️
+        HAPPYYYYYYY BIRTHDAYYYYYYYYYYYYYY 🥳🥂
+     </p>
+     </div>
+    
+
+<script>
+/* SECTION NAV */
+function start(){
+    document.getElementById("s1").classList.add("hidden");
+    document.getElementById("s2").classList.remove("hidden");
+
+    document.getElementById("music").play();
+}
+
+function next(num){
+    document.querySelectorAll(".section").forEach(s=>s.classList.add("hidden"));
+    document.getElementById("s"+num).classList.remove("hidden");
+   
+     // 🎆 FIREWORK TRIGGER
+    if(num === 6){
+        setInterval(()=>{
+            createFirework(
+                Math.random() * fwCanvas.width,
+                Math.random() * fwCanvas.height / 2
+            );
+        }, 700);
+    }
+}
+
+/* SLIDESHOW */
+let index = 0;
+let slides = document.querySelectorAll(".slide");
+
+function showSlide(i){
+    slides.forEach(s=>s.classList.remove("active"));
+    slides[i].classList.add("active");
+}
+
+function nextSlide(){
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}
+
+function prevSlide(){
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+}
+
+
+/* PARTICLES */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+    particles.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2,
+        d:Math.random()*1
+    });
+}
+
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle="white";
+
+    particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fill();
+
+        p.y+=p.d;
+        if(p.y>canvas.height){
+            p.y=0;
+            p.x=Math.random()*canvas.width;
+        }
+    });
+}
+
+setInterval(draw,30);
+
+/* FIREWORKS */
+const fwCanvas = document.getElementById("fireworks");
+const fwCtx = fwCanvas.getContext("2d");
+
+fwCanvas.width = window.innerWidth;
+fwCanvas.height = window.innerHeight;
+
+let fwParticles = [];
+
+function createFirework(x, y) {
+    for (let i = 0; i < 80; i++) {
+        fwParticles.push({
+            x: x,
+            y: y,
+            speedX: (Math.random() - 0.5) * 6,
+            speedY: (Math.random() - 0.5) * 6,
+            life: 100
+        });
+    }
+}
+
+function animateFireworks() {
+    fwCtx.clearRect(0, 0, fwCanvas.width, fwCanvas.height);
+
+    fwParticles.forEach((p, i) => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+        p.life--;
+
+        fwCtx.fillStyle = "rgba(255,105,180," + p.life / 100 + ")";
+        fwCtx.beginPath();
+        fwCtx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+        fwCtx.fill();
+
+        if (p.life <= 0) fwParticles.splice(i, 1);
+    });
+
+    requestAnimationFrame(animateFireworks);
+}
+
+animateFireworks();
+
+</script>
+
+</body>
+</html>
